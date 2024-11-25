@@ -1,0 +1,37 @@
+Data:
+  File: ./data/Torus/Torus_64_64_sdv.ply
+  initFile: ./data/Torus/Torus_64_64_sdv.ply
+  dirichletVertices: [0, 1, 2]
+  scaleFactor: 1.
+  metricFactor: .005
+  metricType: Flat
+
+Output:
+  outputFilePrefix: ""
+  outputFolder: ./output
+  timestampOutput: True
+
+TPE:
+  Type: Spooky
+  alpha: 6
+  beta: 12
+  innerWeight: 1.
+  theta: 0.5
+  thetaNear: 10.
+  useLowerSSMTerm: False
+  useHigherSSMTerm: False
+  useAdaptivity: True
+
+Energy:
+  membraneWeight: 1000.
+  bendingWeight: 1.e-3
+  elasticWeight: 1.e-4
+  tpeWeight: 1.e-10
+  dirichletWeight: 1.e-6
+
+Optimization:
+  Type: Preconditioned
+
+  maxNumIterations: 20000
+  minStepsize: 1.e-12
+  maxStepsize: 10.

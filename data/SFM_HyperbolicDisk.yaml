@@ -1,0 +1,37 @@
+Data:
+  File: ./data/HyperbolicDisk/AdaptedDisk_R1_N30.ply
+  initFile: ./data/HyperbolicDisk/AdaptedDisk_R1_N30.ply
+  dirichletVertices: [0, 1, 2]
+  scaleFactor: 0.85
+  metricFactor: 1.
+  metricType: PoincareDisk
+
+Output:
+  outputFilePrefix: ""
+  outputFolder: ./output
+  timestampOutput: True
+
+TPE:
+  Type: Scary
+  alpha: 6
+  beta: 12
+  innerWeight: 1.
+  theta: 0.5
+  thetaNear: 10.
+  useLowerSSMTerm: True
+  useHigherSSMTerm: True
+  useAdaptivity: True
+
+Energy:
+  membraneWeight: 1.
+  bendingWeight: 1.e-3
+  elasticWeight: 1.
+  tpeWeight: 1.e-8
+  dirichletWeight: 1.e-5
+
+Optimization:
+  Type: Preconditioned
+
+  maxNumIterations: 20000
+  minStepsize: 1.e-12
+  maxStepsize: 10.

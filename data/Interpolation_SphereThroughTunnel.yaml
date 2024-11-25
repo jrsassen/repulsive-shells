@@ -1,0 +1,49 @@
+# TIP: to get more "wrinkled" spheres (as in our paper), use the output of this configuration as initialization and
+# decrease the bending weight
+Data:
+  startFile: ./data/SphereThroughHole/TranslationLoop4Sphere_L1.ply
+  endFile: ./data/SphereThroughHole/TranslationLoop4Sphere_L2.ply
+  obstacleFile: ./data/SphereThroughHole/Wall_7.ply
+  initFile:
+   - ./data/SphereThroughHole/TranslationLoop4Sphere_L1.ply
+   - ./data/SphereThroughHole/TranslationLoop4Sphere_L1.ply
+   - ./data/SphereThroughHole/TranslationLoop4Sphere_L1.ply
+  dirichletVertices: []
+
+Output:
+  outputFilePrefix: ""
+  outputFolder: ./output
+  timestampOutput: True
+
+numSteps: 4
+numLevels: 2
+
+TPE:
+  Type: Scary
+  alpha: 6
+  beta: 12
+  innerWeight: 1.e-6
+  theta: 0.5
+  thetaNear: 10.
+  useLowerSSMTerm: False
+  useHigherSSMTerm: False
+  useAdaptivity: True
+  useObstacleAdaptivity: True
+
+Energy:
+  bendingWeight: 1.e-2
+  elasticWeight: 1.e-4
+  tpeWeight: 1.e-2
+  obstacleWeight: 1.e-2
+  dirichletWeight: 0.
+  barycenterWeight: 1.
+  rotationWeight: 1.e-3
+
+Optimization:
+  Type: TrustRegion
+  Preconditioner: ElasticHessianAndReducedHessian
+
+  maxNumIterations: 50000
+  minStepsize: 1.e-10
+  maxStepsize: 10.
+  minReduction: 1.e-14

@@ -1,0 +1,32 @@
+Data:
+  startFile: ./data/Leaf/sbdv_step0.ply
+  secondFile: ./data/Leaf/sbdv_step1.ply
+  dirichletVertices: [136, 590, 954]
+
+Output:
+  outputFilePrefix: ""
+  outputFolder: ./output
+  timestampOutput: True
+
+numSteps: 450
+
+TPE:
+  Type: Scary
+  alpha: 6
+  beta: 12
+  innerWeight: 1.e-4
+  theta: 0.5
+  thetaNear: 10.
+  useAdaptivity: True
+
+Energy:
+  bendingWeight: 1.e-3
+  elasticWeight: 10.
+  tpeWeight: 1.
+  barycenterWeight: 0.
+  dirichletWeight: 1.
+
+Optimization:
+  maxNumIterations: 10000
+  minStepsize: 1.e-12
+  maxStepsize: 10.

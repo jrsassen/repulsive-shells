@@ -1,0 +1,38 @@
+Data:
+  inputFiles:
+    - ./data/Humanoid/Rigging_SCAPE_rm_5.ply
+    - ./data/Humanoid/Rigging_SCAPE_rm_8.ply
+    - ./data/Humanoid/Rigging_SCAPE_rm_9.ply
+  initFile: ./data/Humanoid/Rigging_SCAPE_rm_ref.ply
+  dirichletVertices: [ 1248, 1290, 1149, 1076, 1247 ]
+
+Output:
+  outputFilePrefix: ""
+  outputFolder: ./output
+  timestampOutput: True
+
+TPE:
+  Type: Scary
+  alpha: 6
+  beta: 12
+  innerWeight: 1.e-11
+  theta: 0.5
+  thetaNear: 10.
+  useLowerSSMTerm: True
+  useHigherSSMTerm: True
+  useAdaptivity: True
+
+Energy:
+  bendingWeight: 1.e-3
+  elasticWeight: 1.
+  tpeWeight: 1.
+
+
+Optimization:
+  Type: TrustRegion
+  Preconditioner: ElasticHessian
+  
+  initWithElastic: False
+  maxNumIterations: 10000
+  minStepsize: 1.e-12
+  maxStepsize: 10.

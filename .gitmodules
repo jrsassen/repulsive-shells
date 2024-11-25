@@ -1,0 +1,6 @@
+[submodule "deps/GOAST"]
+	path = deps/GOAST
+	url = https://gitlab.com/numod/goast.git
+[submodule "deps/yaml-cpp"]
+	path = deps/yaml-cpp
+	url = https://github.com/jbeder/yaml-cpp.git

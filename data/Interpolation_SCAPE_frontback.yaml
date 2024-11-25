@@ -1,0 +1,45 @@
+Data:
+  startFile: ./data/Humanoid/Rigging_SCAPE_rm_5.ply
+  endFile: ./data/Humanoid/Rigging_SCAPE_rm_6.ply
+  initFile: ./data/Humanoid/Rigging_SCAPE_rm_ref.ply
+#  startFile: ./data/Humanoid/new5.ply
+#  endFile: ./data/Humanoid/new6n.ply
+#  initFile: ./data/Humanoid/new.ply
+  dirichletVertices: [1248,1290,1149,1076,1247] # rm + new
+  decimationFactor: -1.
+
+Output:
+  outputFilePrefix: ""
+  outputFolder: ./output
+  timestampOutput: True
+
+numSteps: 8
+numLevels: 1
+
+TPE:
+  Type: Scary
+  alpha: 6
+  beta: 12
+  innerWeight: 1.e-10
+  theta: 0.5
+  thetaNear: 10.
+  useLowerSSMTerm: False
+  useHigherSSMTerm: False
+  useAdaptivity: True
+
+Energy:
+  bendingWeight: 1.e-3
+  elasticWeight: 1.
+  tpeWeight: 1.
+  dirichletWeight: 0.
+  barycenterWeight: 0.
+
+
+Optimization:
+  Type: TrustRegion
+  Preconditioner: ElasticHessianAndReducedHessian
+  
+  maxNumIterations: 10000
+  minStepsize: 1.e-12
+  maxStepsize: 10.
+  minReduction: 1.e-10

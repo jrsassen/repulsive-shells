@@ -1,0 +1,33 @@
+Data:
+  startFile: ./data/HeadPunch/punch1.obj
+  secondFile: ./data/HeadPunch/punch3.obj
+  dirichletVertices: [193, 2609, 2610, 2612, 2626, 2627, 2630, 2631, 2645]
+
+Output:
+  outputFilePrefix: ""
+  outputFolder: ./output
+  timestampOutput: True
+
+numSteps: 32
+
+TPE:
+  Type: Scary
+  alpha: 6
+  beta: 12
+  innerWeight: 1.e-5
+  theta: 0.5
+  thetaNear: 10.
+  useAdaptivity: False
+
+Energy:
+  bendingWeight: 1.e-3
+  elasticWeight: 10.
+  tpeWeight: 1.
+  barycenterWeight: 1.
+  dirichletWeight: 0.
+
+Optimization:
+  maxNumIterations: 10000
+  minStepsize: 1.e-12
+  maxStepsize: 10.
+
